@@ -8,7 +8,8 @@ option_parser = OptionParser.new do |option|
   option.banner = 'Usage: capo COMMAND [OPTIONS]'
   option.separator ''
   option.separator 'Commands'
-  option.separator '    init: Clones and pulls the repository that contains the recipes'
+  option.separator '    init:  Clones and pulls the repository that contains the recipes'
+  option.separator '    list:  Lists all available recipes'
   option.separator ''
   option.separator 'Options'
 
