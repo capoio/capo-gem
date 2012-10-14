@@ -4,6 +4,7 @@ require 'capo/version'
 
 require 'capo/init'
 require 'capo/recipes'
+require 'capo/capfile'
 
 module Capo
   class << self
