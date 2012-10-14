@@ -16,14 +16,14 @@ module Capo
 
         Dir.mkdir(app_deploy_path) unless Dir.exists?(app_deploy_path)
 
-        puts "Copying recipe '#{name}' to #{app_recipe_path}"
+        puts "[#{name}] Copying recipe to #{app_recipe_path}"
         FileUtils.copy File.join(Capo.repository_path, 'recipes', name, "#{name}.rb"), app_recipe_path
 
-        puts "Adding line to Capfile"
+        puts "[#{name}] Adding line to Capfile"
         capfile = File.join Capo.app_path, 'Capfile'
         File.open(capfile, 'a+'){|f| f.puts "load 'config/deploy/#{name}'"}
 
-        puts "Recipe #{name} added"
+        puts "[#{name}] Recipe added"
       end
 
       def added
