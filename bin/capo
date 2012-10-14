@@ -1,0 +1,28 @@
+#!/usr/bin/ruby
+require 'optparse'
+require 'capo'
+
+options = {}
+
+option_parser = OptionParser.new do |option|
+  option.banner = 'Usage: capo COMMAND [OPTIONS]'
+  option.separator ''
+  option.separator 'Commands'
+  option.separator '    init: Clones and pulls the repository that contains the recipes'
+  option.separator ''
+  option.separator 'Options'
+
+  option.on('-h', '--help', 'help') do
+    @help = true
+    puts option_parser
+  end
+end
+
+option_parser.parse!
+
+case ARGV[0]
+when 'init'
+  Capo::Init.fetch_repository
+else
+  puts option_parser unless @help
+end
