@@ -22,7 +22,7 @@ Or install it yourself as:
 
 Run `capo begin` to set up capistrano in your project. It will create a `Capfile` and `config/deploy.rb` in the folder where you run the command.
 
-Run `capo list` to get a list of aailable recipes. Install recipes with `capo add a_recipe`.
+Run `capo list` to get a list of aailable recipes. Install recipes with `capo add a_recipe`. You can also install multiple recipes at once by running `capo add recipe_1 recipe_2 recipe_3`.
 
 You can get a list of installed recipes with `capo added`.
 

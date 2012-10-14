@@ -10,6 +10,7 @@ module Capo
       end
 
       def add name
+        return name.each{|recipe| add recipe} if name.is_a?(Array)
         recipe = recipes.select{|r| r[:name] == name}.first
         raise "Recipe '#{name}' not found" unless recipe
 

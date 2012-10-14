@@ -40,7 +40,7 @@ when 'list'
   Capo::Recipes.list
 when 'add'
   Capo::Init.fetch_repository
-  Capo::Recipes.add ARGV[1]
+  Capo::Recipes.add ARGV[1..ARGV.size]
 when 'added'
   Capo::Init.fetch_repository
   Capo::Recipes.added
