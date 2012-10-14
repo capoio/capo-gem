@@ -37,6 +37,8 @@ when 'list'
   Capo::Recipes.list
 when 'add'
   Capo::Recipes.add ARGV[1]
+when 'added'
+  Capo::Recipes.added
 else
   puts option_parser unless @usage_shown
 end

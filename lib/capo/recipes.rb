@@ -12,7 +12,6 @@ module Capo
       def add name
         raise "Recipe '#{name}' not found" unless recipes.map{|recipe| recipe[:name]}.include? name
 
-        app_deploy_path = File.join Capo.app_path, 'config/deploy'
         app_recipe_path = File.join app_deploy_path, "#{name}.rb"
 
         Dir.mkdir(app_deploy_path) unless Dir.exists?(app_deploy_path)
@@ -27,10 +26,21 @@ module Capo
         puts "Recipe #{name} added"
       end
 
+      def added
+        puts "Installed recipes:"
+        Dir[File.join(app_deploy_path, '*')].each do |recipe|
+          puts "  * #{recipe.match(/config\/deploy\/(\w+).rb$/)[1]}"
+        end
+      end
+
       private
       def recipes
         require File.join(Capo.repository_path, 'lib/raw_recipe')
         RawRecipe.load_all
+      end
+
+      def app_deploy_path
+        File.join Capo.app_path, 'config/deploy'
       end
     end
   end
