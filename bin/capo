@@ -33,12 +33,16 @@ case ARGV[0]
 when 'init'
   Capo::Init.fetch_repository
 when 'begin'
+  Capo::Init.fetch_repository
   Capo::Capfile.generate
 when 'list'
+  Capo::Init.fetch_repository
   Capo::Recipes.list
 when 'add'
+  Capo::Init.fetch_repository
   Capo::Recipes.add ARGV[1]
 when 'added'
+  Capo::Init.fetch_repository
   Capo::Recipes.added
 else
   puts option_parser unless @usage_shown
