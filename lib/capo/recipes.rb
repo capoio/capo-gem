@@ -10,7 +10,16 @@ module Capo
       end
 
       def add name
-        raise "Recipe '#{name}' not found" unless recipes.map{|recipe| recipe[:name]}.include? name
+        recipe = recipes.select{|r| r[:name] == name}.first
+        raise "Recipe '#{name}' not found" unless recipe
+
+        if (dependencies = recipe[:dependencies]).any?
+          puts "[#{name}] Installing dependencies first:"
+          dependencies.each do |dependency|
+            puts "[#{dependency}] Installing depdendency"
+            add dependency
+          end
+        end
 
         app_recipe_path = File.join app_deploy_path, "#{name}.rb"
 
