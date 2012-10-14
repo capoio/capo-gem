@@ -11,5 +11,9 @@ module Capo
     def repository_path
       File.expand_path '~/.capo'
     end
+
+    def app_path
+      Dir.pwd
+    end
   end
 end

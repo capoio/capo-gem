@@ -2,10 +2,8 @@ module Capo
   module Capfile
     class << self
       def generate
-        path = Dir.pwd
-
         files.each do |file, content|
-          file = File.join path, file
+          file = File.join Capo.app_path, file
           if File.exists?(file)
             warn "[skip] '#{file}' already exists"
           elsif File.exists?(file.downcase)

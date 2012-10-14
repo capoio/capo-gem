@@ -11,6 +11,7 @@ option_parser = OptionParser.new do |option|
   option.separator '    init:  Clones and pulls the repository that contains the recipes'
   option.separator '    list:  Lists all available recipes'
   option.separator '    begin: Sets up capistrano for your project'
+  option.separator '    add:   Adds recipe to your deploy setup'
   option.separator ''
   option.separator 'Options'
 
@@ -34,6 +35,8 @@ when 'begin'
   Capo::Capfile.generate
 when 'list'
   Capo::Recipes.list
+when 'add'
+  Capo::Recipes.add ARGV[1]
 else
   puts option_parser unless @usage_shown
 end
