@@ -3,7 +3,12 @@
 require 'capo/version'
 
 require 'capo/init'
+require 'capo/recipes'
 
 module Capo
-  # Your code goes here...
+  class << self
+    def repository_path
+      File.expand_path '~/.capo'
+    end
+  end
 end

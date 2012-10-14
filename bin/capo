@@ -23,6 +23,8 @@ option_parser.parse!
 case ARGV[0]
 when 'init'
   Capo::Init.fetch_repository
+when 'list'
+  Capo::Recipes.list
 else
   puts option_parser unless @help
 end
