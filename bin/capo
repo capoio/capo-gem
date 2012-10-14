@@ -12,6 +12,7 @@ option_parser = OptionParser.new do |option|
   option.separator '    list:  Lists all available recipes'
   option.separator '    begin: Sets up capistrano for your project'
   option.separator '    add:   Adds recipe to your deploy setup'
+  option.separator '    added: Lists installed recipes of your deploy setup'
   option.separator ''
   option.separator 'Options'
 
