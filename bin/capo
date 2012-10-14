@@ -13,8 +13,13 @@ option_parser = OptionParser.new do |option|
   option.separator 'Options'
 
   option.on('-h', '--help', 'help') do
-    @help = true
+    @usage_shown = true
     puts option_parser
+  end
+
+  option.on('-v', '--version', 'version') do
+    @usage_shown = true
+    puts Capo::VERSION
   end
 end
 
@@ -26,5 +31,5 @@ when 'init'
 when 'list'
   Capo::Recipes.list
 else
-  puts option_parser unless @help
+  puts option_parser unless @usage_shown
 end
