@@ -50,7 +50,7 @@ module Capo
 
       def unindent string
         indentation = string[/\A\s*/]
-        string.strip.gsub /^#{indentation}/, ''
+        string.gsub /^#{indentation}/, ''
       end
     end
   end
