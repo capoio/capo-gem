@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = Capo::VERSION
   gem.authors       = ['Jeroen Jacobs', 'Joren De Groof', 'Steven De Coeyer', 'Hannes Fostie']
   gem.email         = ['mail@capo.io']
-  gem.description   = 'Command line utility to fetch and manage recipes'
-  gem.summary       = 'Command line utility to fetch and manage recipes'
+  gem.description   = 'Command line utility to fetch and manage Capistrano recipes'
+  gem.summary       = 'Command line utility to fetch and manage Capistrano recipes'
   gem.homepage      = 'http://capo.io'
 
   gem.files         = `git ls-files`.split($/)
