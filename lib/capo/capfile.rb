@@ -25,6 +25,7 @@ module Capo
           load 'deploy'
 
           load 'config/deploy'
+
         FILE
       end
 
