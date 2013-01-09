@@ -24,7 +24,7 @@ module Capo
 
         app_recipe_path = File.join app_deploy_path, "#{name}.rb"
 
-        Dir.mkdir(app_deploy_path) unless Dir.exists?(app_deploy_path)
+        Dir.mkdir(app_deploy_path) unless File.exists?(app_deploy_path)
 
         puts "[#{name}] Copying recipe to #{app_recipe_path}"
         FileUtils.copy File.join(Capo.repository_path, 'recipes', name, "#{name}.rb"), app_recipe_path
