@@ -10,7 +10,7 @@ module Capo
         puts "Pulling changes from remote repository"
         begin
           repo = with_timeout{Git.open Capo.repository_path}
-          puts with_timeout{repo.lib.send :command, 'pull'} # repo.pull is broken in git-1.2.5, see: https://github.com/schacon/ruby-git/issues/32
+          puts with_timeout{repo.pull}
         rescue
           puts "Repository doesn't seem to exist yet..."
           puts "Cloning repository from #{repository_url} to #{Capo.repository_path}"
